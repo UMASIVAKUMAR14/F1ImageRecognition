@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Driver Classifier</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <script src="./app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="bg-img"></div>
+    <h1 id="header">F1 Driver Classifier</h1>
+
+    <div class="container">
+        <div class="row">
+            <!-- Carlos Sainz -->
+            <div class="col" data-player="carlos_sainz">
+                <div class="card border-0">
+                    <div class="position-relative overflow-hidden mx-auto">
+                        <img class="w-100 h-100 driver-img" src="./images/CS.avif" alt="f1 driver Carlos Sainz">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase">Carlos Sainz</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>            
+            <!-- George Russell -->
+            <div class="col" data-player="george_russell">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden mx-auto">
+                            <img class="w-100 h-100 driver-img" src="./images/GR.avif" alt="f1 driver George Russell">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase">George Russell</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>      
+            <!-- Lewis Hamilton -->
+            <div class="col" data-player="lewis_hamilton">
+                    <div class="card border-0">
+                        <div class="position-relative overflow-hidden mx-auto">
+                            <img class="w-100 h-100 driver-img" src="./images/LH.avif" alt="f1 driver Lewis Hamilton">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase">Lewis Hamilton</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>          
+            <!-- Lando Norris -->
+            <div class="col" data-player="lando_norris">
+                <div class="card border-0">
+                    <div class="position-relative overflow-hidden mx-auto">
+                        <img class="w-100 h-100 driver-img" src="./images/LN.avif" alt="f1 driver Lando Norris">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase">Lando Norris</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>      
+            <!-- Max Verstappen -->
+            <div class="col" data-player="max_verstappen">
+                <div class="card border-0">
+                    <div class="position-relative overflow-hidden mx-auto">
+                        <img class="w-100 h-100 driver-img" src="./images/MV.avif" alt="f1 driver Max Verstappen">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase">Max Verstappen</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <!-- Drop Zone -->
+                        <form action="/file-upload" class="dropzone" id="dropzone" size="">
+                            <br>
+                            <span id="dz-message"> Drop files here or click to upload </span>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- submit button -->
+                     <button id="submitBtn" type="button" class="btn btn-primary"> Classify </button>
+                </div>
+            </div>
+
+            <!-- result -->
+            <div class="col error" id="error">
+                <p> Make sure the image you uploaded has a face and 2 eyes </p>
+            </div>
+            <div class="col" id="resultHolder"> </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

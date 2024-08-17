@@ -60,8 +60,8 @@ def classify_image(image_base64_data, file_path=None):
 
     imgs = get_cropped_image(file_path, image_base64_data)
     
-    if (imgs == []):
-        return "Make sure the image clearly shows a face and both eyes."
+    # if (imgs == []):
+    #     return "Make sure the image clearly shows a face and both eyes."
 
     result = []
     for img in imgs:
@@ -72,12 +72,12 @@ def classify_image(image_base64_data, file_path=None):
 
         len_image_array = 32*32*3 + 32*32
         final = combined_img.reshape(1,len_image_array).astype(float) 
-        result.append(class_number_to_name(__model.predict(final)[0]))
-        # result.append({
-        #     'class': class_number_to_name(__model.predict(final)[0]),
-        #     'class_probability': np.around(__model.predict_proba(final)*100,2).tolist()[0],
-        #     'class_dictionary': __class_name_to_number
-        # })
+        # result.append(class_number_to_name(__model.predict(final)[0]))
+        result.append({
+            'class': class_number_to_name(__model.predict(final)[0]),
+            'class_probability': np.around(__model.predict_proba(final)*100,2).tolist()[0],
+            'class_dictionary': __class_name_to_number
+        })
 
     return result
 
